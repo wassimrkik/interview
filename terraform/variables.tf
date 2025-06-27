@@ -20,3 +20,8 @@ variable "repo-name" {
 variable "repo-description" {
   default = "a repo to test deployment"
 }
+
+variable "api-key" {
+  type = string
+  default = "check tfvars"
+}
