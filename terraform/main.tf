@@ -6,12 +6,12 @@ resource "google_cloud_run_v2_service" "default" {
 
   template {
     containers {
-      image = "europe-west1-docker.pkg.dev/patricio-poc-1/${google_artifact_registry_repository.my-repo.name}/interview"
+      image = "europe-west1-docker.pkg.dev/${var.project}/${var.service-name}/interview"
       env {
         name = "OPEN_API_KEY"
         value_source {
           secret_key_ref {
-            secret = "api_key"
+            secret  = "api_key"
             version = "latest"
           }
         }
@@ -57,22 +57,22 @@ resource "google_secret_manager_secret" "secret" {
   secret_id = "api_key"
   replication {
     auto {
-      
+
     }
   }
 }
 
 resource "google_secret_manager_secret_version" "default" {
-     secret      = google_secret_manager_secret.secret.id
-     secret_data = var.api-key
-   }
+  secret      = google_secret_manager_secret.secret.id
+  secret_data = var.api-key
+}
 
 data "google_project" "project" {
 }
 
 resource "google_secret_manager_secret_iam_member" "secret-access" {
-  secret_id = google_secret_manager_secret.secret.id
-  role      = "roles/secretmanager.secretAccessor"
-  member    = "serviceAccount:${data.google_project.project.number}-compute@developer.gserviceaccount.com"
+  secret_id  = google_secret_manager_secret.secret.id
+  role       = "roles/secretmanager.secretAccessor"
+  member     = "serviceAccount:${data.google_project.project.number}-compute@developer.gserviceaccount.com"
   depends_on = [google_secret_manager_secret.secret]
 }

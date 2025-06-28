@@ -1,6 +1,6 @@
 terraform {
   backend "gcs" {
-    bucket = "wassim-test-1"
+    bucket = "interview-tfstate-1"
     prefix = "terraform/state-interview"
   }
 }

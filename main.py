@@ -1,16 +1,16 @@
 import os
-from fastapi import FastAPI
-import uvicorn
-from openai import OpenAI
-import openai
-from models import TextRequest,ImageRequest
-from fastapi.responses import FileResponse
 import base64
-import dotenv
 import uuid
 
-import traceback
+import dotenv
 from logging import getLogger
+
+import uvicorn
+from openai import OpenAI
+from fastapi import FastAPI
+from fastapi.responses import FileResponse
+from models import TextRequest,ImageRequest
+
 
 IMAGE_DIR = "images"
 os.makedirs(IMAGE_DIR, exist_ok=True)
@@ -39,7 +39,7 @@ async def generate_text(req: TextRequest):
             stream=False,
         )
 
-        return(stream.output[0].content[0].text)
+        return stream.output[0].content[0].text
 
     except Exception as e:
         return {"error": str(e)}

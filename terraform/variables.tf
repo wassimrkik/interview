@@ -22,6 +22,10 @@ variable "repo-description" {
 }
 
 variable "api-key" {
-  type = string
+  type    = string
   default = "check tfvars"
+}
+
+variable "project" {
+  default = "interview-464218"
 }
