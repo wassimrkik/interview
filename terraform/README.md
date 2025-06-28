@@ -29,5 +29,8 @@ This repo deploys a service on **Cloud Run** to showcase a **FastAPI** backend u
 
 ## Resources used 
 
-Personal project
-Terraform docs
+- Personal project
+- Terraform docs
+
+## Note
+- I would prefer the modules approach to make the code reusable

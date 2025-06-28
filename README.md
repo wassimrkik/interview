@@ -35,9 +35,9 @@ gcloud run deploy SERVICE_NAME --region=YOUR_REGION --source . --allow-unauthent
 ```
 
 ## Resources used 
-http://github.com/openai/openai-python
-https://platform.openai.com/docs/libraries
-https://www.youtube.com/watch?v=sXah_wSquFg&t=1462s
+- http://github.com/openai/openai-python
+- https://platform.openai.com/docs/libraries
+- https://www.youtube.com/watch?v=sXah_wSquFg&t=1462s
 
 ChatGPT was used for README.md formatting
 
