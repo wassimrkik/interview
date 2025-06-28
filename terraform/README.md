@@ -26,3 +26,8 @@ This repo deploys a service on **Cloud Run** to showcase a **FastAPI** backend u
 
 ## Required inputs
     - TF_VAR_api-key
+
+## Resources used 
+
+Personal project
+Terraform docs
