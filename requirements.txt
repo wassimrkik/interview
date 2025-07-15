@@ -2,5 +2,11 @@ fastapi
 openai
 uvicorn
 pydantic
-dotenv
+python-dotenv
 uuid
+google-api-python-client
+google-generativeai
+google-genai
+python-multipart
+anthropic
+Groq

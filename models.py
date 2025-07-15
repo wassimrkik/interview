@@ -1,5 +1,6 @@
 
 from pydantic import BaseModel
+from enum import Enum
 
 class ImageRequest(BaseModel):
     prompt: str
@@ -8,3 +9,9 @@ class ImageRequest(BaseModel):
 
 class TextRequest(BaseModel):
     prompt: str
+
+class Aimodel(str, Enum):
+    openai = "openai"
+    gemini = "gemini"
+    anthropic = "claude"
+    groq = "Groq"
